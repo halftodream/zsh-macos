@@ -5,6 +5,32 @@
 
 # ~/.zshrc file for zsh non-login shells.
 
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/halftodream/.oh-my-zsh"
+
+#plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
+
+export LDFLAGS="-L/usr/local/opt/sqlite/lib"
+export CPPFLAGS="-I/usr/local/opt/sqlite/include"
+
+# Android
+export PATH=$PATH:/Users/halftodream/Library/Android/sdk/platform-tools/
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
@@ -99,12 +125,12 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    # PROMPT_USER_MACHINE='%F{green}┌──(%B%F{blue}%n%m%b%F{green})-'
+    # PROMPT_USER_MACHINE='%F{green}┌──(%B%F{blue}%n%F{red}λ%F{blue}%m%b%F{green})-'
     # PROMPT_PATH='[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{green}]'
     # PROMPT_GIT='%F{011}${vcs_info_msg_0_}'
     # PROMPT_LINE2=$'\n%F{green}└─%B%F{blue}$%b%F{reset} '
     # PROMPT='$PROMPT_USER_MACHINE''$PROMPT_PATH''$PROMPT_GIT''$PROMPT_LINE2'
-    PROMPT=$'%F{green}┌──(%B%F{blue}%n%m%b%F{green})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{green}]%F{011}${vcs_info_msg_0_}\n%F{green}└─%B%F{blue}$%b%F{reset} '
+    PROMPT=$'%F{green}┌──(%B%F{blue}%n%F{red}λ%F{blue}%m%b%F{green})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{green}]%F{011}${vcs_info_msg_0_}\n%F{green}└─%B%F{blue}$%b%F{reset} '
     RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
 
     # enable syntax-highlighting
