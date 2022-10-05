@@ -30,6 +30,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+
+# Java
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+
+# Jenv
+export PATH="$HOME/.jenv/shims:$PATH"
+export PATH="$HOME/.jenv/bin:$PATH"
+
+# Init jenv
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
